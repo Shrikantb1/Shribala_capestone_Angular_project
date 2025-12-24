@@ -60,9 +60,8 @@ Html code:
      <!-- Equals button spans full width of calculator grid -->
     <button class="btn btn-success btn-lg equal-btn" (click)="calculate()">=</button>
 
-
-    CSS Code:
-    /* ========== CALCULATOR GRID  ========== */
+CSS Code:
+/* ========== CALCULATOR GRID  ========== */
 
 .calculator-grid {
   display: grid; 
