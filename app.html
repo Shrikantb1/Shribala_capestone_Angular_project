@@ -1,0 +1,50 @@
+<!-- Main container with Bootstrap class 'container' for responsive centering and 'mt-5' for top margin -->
+<div class="container mt-5">
+
+  
+   <!-- Outer calculator box with custom 'calculator-grid' class for grid, 'bg-primary' for blue background color -->
+  <div class="calculator-grid shadow bg-primary">
+    
+    
+     <!-- Header area spanning full width of calculator grid -->
+    <div class="calculator-header">
+      <h2> Angular Calculator </h2>
+    </div>
+
+    <!-- 2. Display Input (Inside the box) -->
+     <!--  Usage of 'FORM' where user will enter the input value(Inside the box), Used 'ngModel' within the 'Form'-->
+      <!-- Also implementation of Two-Way Data Binding using 'ngModel' -->
+     <!-- Input field that shows the current calculation/result-->
+    <form>
+      <input type="text" 
+           class="form-control text-end fs-4 bg-white calculator-display" 
+           [(ngModel)]="display" 
+           name="display"
+           readonly>
+           
+
+    </form>  
+    
+    <!-- 3. Button Grid -->
+    <!--  Usage of *ngFor for looping--> 
+     <!--Array contains: numbers (0-9), operators (+,-,*,/), decimal point (.), and clear (AC) -->
+
+    <ng-container *ngFor="let btn of ['7','8','9','/','4','5','6','*','1','2','3','-','AC','0','.','+']">
+      <!-- Each calculator button with dynamic styling and behavior -->
+      <!-- Usage of  [ngClass] for condition based add/removal of css classes-->
+      <button class="btn btn-lg"
+              [ngClass]="{
+                'btn-danger': btn === 'AC', 
+                'btn-info': ['/','*','-','+'].includes(btn),
+                'btn-outline-secondary': !['AC','/','*','-','+'].includes(btn)
+              }"
+              (click)="btn === 'AC' ? clear() : press(btn)">   
+        {{btn}} <!-- Display the button's value (number, operator, or 'AC') -->
+      </button>
+    </ng-container>
+    
+    <!-- 4. Equals Button -->
+     <!-- Equals button spans full width of calculator grid -->
+    <button class="btn btn-success btn-lg equal-btn" (click)="calculate()">=</button>
+  </div>
+</div>

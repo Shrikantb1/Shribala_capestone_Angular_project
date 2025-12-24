@@ -1,0 +1,60 @@
+/* ========== CALCULATOR GRID CONTAINER ========== */
+
+.calculator-grid {
+  display: grid;  
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for buttons */
+  width: 360px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 12px;
+  border: 5px solid #333;
+  border-radius: 10px;
+  background: #f0f0f0; /* Light gray background for the whole box */
+  box-sizing: border-box;/* Include padding and border in the element's total width/height  */
+}
+
+/* ========== FORM WRAPPER FOR DISPLAY INPUT ========== */
+
+.calculator-grid form {
+  grid-column: span 4; /* Make form span all 4 columns like the input did */
+  margin: 0; /* Remove any default browser margins */
+  padding: 0; /* Remove any default browser padding */
+}
+
+/* The blue header section at the top showing "Angular Calculator" */
+.calculator-header {
+    grid-column: span 4;
+    background-color: #0d6dfd9d; /* Bootstrap Primary Blue */
+    color: black;
+    padding: 5px; 
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px; 
+}
+/* ========== CALCULATOR DISPLAY ========== */
+/* Make Display Input span all 4 columns */
+.calculator-display {
+  width: 100%; 
+  height: 40px;
+  margin-bottom: 10px;
+  text-align: right;
+  border: 1px solid #ccc;
+  font-size: 32px; 
+  padding: 5px 10px;
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+/* Make Equal Button span all 4 columns */
+.equal-btn {
+  grid-column: span 4;
+  margin-top: 5px;
+}
+/* ========== CALCULATOR BUTTONS ========== */
+.calculator-grid button {
+    height: 60px; 
+    font-size: 20px; 
+    font-weight: 600; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
