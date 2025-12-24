@@ -60,11 +60,11 @@ Html code:
      <!-- Equals button spans full width of calculator grid -->
     <button class="btn btn-success btn-lg equal-btn" (click)="calculate()">=</button>
 
-CSS Code:
-/* ========== CALCULATOR GRID  ========== */
+
+/* ========== CALCULATOR GRID CONTAINER ========== */
 
 .calculator-grid {
-  display: grid; 
+  display: grid;  
   grid-template-columns: repeat(4, 1fr); /* 4 columns for buttons */
   width: 360px;
   margin: 0 auto;
@@ -73,16 +73,15 @@ CSS Code:
   border: 5px solid #333;
   border-radius: 10px;
   background: #f0f0f0; /* Light gray background for the whole box */
-  box-sizing: border-box;
+  box-sizing: border-box;/* Include padding and border in the element's total width/height  */
 }
 
 /* ========== FORM WRAPPER FOR DISPLAY INPUT ========== */
 
-
 .calculator-grid form {
   grid-column: span 4; /* Make form span all 4 columns like the input did */
-  margin: 0; 
-  padding: 0; 
+  margin: 0; /* Remove any default browser margins */
+  padding: 0; /* Remove any default browser padding */
 }
 
 /* The blue header section at the top showing "Angular Calculator" */
@@ -106,7 +105,7 @@ CSS Code:
   border: 1px solid #ccc;
   font-size: 32px; 
   padding: 5px 10px;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Include padding and border in width calculation */
 }
 /* Make Equal Button span all 4 columns */
 .equal-btn {
@@ -122,5 +121,3 @@ CSS Code:
     border: 1px solid #ccc;
     cursor: pointer;
 }
-  </div>
-</div>
